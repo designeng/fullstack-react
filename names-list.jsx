@@ -7,6 +7,12 @@ class NamesList extends React.Component {
         this.state = {names: {}}
     }
 
+    update() {
+        model.getValue(['names', 'length'])
+            .then(length => model.get(['names', {from: 0, to: length-1}, 'name']))
+            .then(response => this.setState({names: response.json.names}))
+    }
+
     componentWillMount() {
         this.update()
     }
@@ -18,12 +24,6 @@ class NamesList extends React.Component {
         return (
             <ul>{names}</ul>
         )
-    }
-
-    update() {
-        model.getValue(['names', 'length'])
-            .then(length => model.get(['names', {from: 0, to: length-1}, 'name']))
-            .then(response => this.setState({names: response.json.names}))
     }
 }
 
