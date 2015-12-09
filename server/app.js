@@ -35,6 +35,7 @@ var FalcorServer = require('falcor-express'),
         {
             route: 'names.add',
             call: (callPath, args) => {
+                console.log(callPath, args);
                 var newName = args[0];
 
                 data.names.push({name: newName})
