@@ -14,9 +14,3 @@ The app constructed here is simple - a list of names, maintained on the server, 
 2. `npm run webpack`
 3. `node start`
 4. Navigate to http://localhost:9090
-
-
-[edit-names]: https://github.com/Widen/fullstack-react/tree/edit-names
-[jerome-cirrios]: https://github.com/jerome-cirrios
-[name-reordering]: https://github.com/Widen/fullstack-react/tree/name-reordering
-[skvale]: https://github.com/skvale
