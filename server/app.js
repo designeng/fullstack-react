@@ -60,6 +60,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/model.json', FalcorServer.dataSourceRoute(() => new NamesRouter()));
 
 app.use('/api', routes);
+app.use(express.static('.'));
 
 /* 404 */
 app.use(function(req, res, next) {
@@ -67,7 +68,5 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-app.use(express.static('.'));
 
 module.exports = app;
