@@ -24,13 +24,13 @@ describe('integration', function () {
     });
 
     // TODO
-    xit('model.json should accept post request', function (done) {
+    it('model.json should accept post request', function (done) {
         apitest.post('/model.json')
-            // .send({ method    : 'call' })
-            // .send({ callPath  : ["names","add"] })
-            // .send({ callPath  : ["names", "add"]})
-            // .send({ arguments : ["1234567"] })
-            // .field( arguments : ["1234567"] )
-            .expect(500, done);
+            .send({ 
+                method    : 'call', 
+                callPath  : ['names','add'],
+                arguments : ['1234567']
+            })
+            .expect(200, done);
     });
 });
