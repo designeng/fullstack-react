@@ -23,7 +23,6 @@ describe('integration', function () {
             .expect(500, done);
     });
 
-    // TODO
     it('model.json should accept post request', function (done) {
         apitest.post('/model.json')
             .send({ 
