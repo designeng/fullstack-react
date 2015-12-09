@@ -18,15 +18,19 @@ describe('integration', function () {
         apitest.get('/model.json?paths=[["names","length"]]&method=get').expect(200, done);
     });
 
+    it('model.json post should throw 500 error without args', function (done) {
+        apitest.post('/model.json')
+            .expect(500, done);
+    });
+
     // TODO
     xit('model.json should accept post request', function (done) {
         apitest.post('/model.json')
             // .send({ method    : 'call' })
+            // .send({ callPath  : ["names","add"] })
             // .send({ callPath  : ["names", "add"]})
             // .send({ arguments : ["1234567"] })
-            .field( 'method', 'call' )
-            // .field( callPath  : ["names", "add"] )
             // .field( arguments : ["1234567"] )
-            .expect(200, done);
+            .expect(500, done);
     });
 });
