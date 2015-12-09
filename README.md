@@ -9,16 +9,8 @@ The app constructed here is simple - a list of names, maintained on the server, 
 
 1. `npm install`
 2. `npm run webpack`
-3. `node --harmony server`
+3. `node start`
 4. Navigate to http://localhost:9090
-
-
-## TODO
-
-- ~~ability to edit existing names~~
-    - Completed by [Sam Kvale][skvale] in the [edit-names] branch.
-- ~~support for name re-ordering~~
-    - Completed by [Jerome Cirrios][jerome-cirrios] in the [name-reordering] branch.
 
 
 [edit-names]: https://github.com/Widen/fullstack-react/tree/edit-names
