@@ -13,6 +13,6 @@ describe('integration', function () {
     });
 
     xit('model.json path exists', function (done) {
-         request(app).get('/model.json').expect(200, done);
+        apitest.get('/model.json').expect(200, done);
     });
 });
