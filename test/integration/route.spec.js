@@ -1,6 +1,6 @@
 var app      = require('../../server/app.js');
 
-var model      = require('../../model.js');
+var model      = require('../../src/model.js');
 
 var request  = require('supertest');
 var apitest = request(app);

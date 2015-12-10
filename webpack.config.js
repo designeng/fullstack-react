@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './name-manager.jsx',
+    entry: __dirname + '/src/name-manager.jsx',
     output: {
         filename: './site/bundle.js'
     },

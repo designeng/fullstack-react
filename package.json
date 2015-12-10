@@ -24,7 +24,7 @@
     "webpack": "1.12.2"
   },
   "scripts": {
-    "webpack": "webpack -w",
+    "build": "webpack -w",
     "start": "node --harmony server",
     "test": "./node_modules/mocha/bin/mocha test/integration/*.spec.js"
   }

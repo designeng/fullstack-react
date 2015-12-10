@@ -11,6 +11,6 @@ The app constructed here is simple - a list of names, maintained on the server, 
 ## Starting the app  
 
 1. `npm install`
-2. `npm run webpack`
+2. `npm run build`
 3. `node start`
 4. Navigate to http://localhost:9090
