@@ -1,7 +1,7 @@
 module.exports = {
     entry: __dirname + '/src/name-manager.jsx',
     output: {
-        filename: './site/bundle.js'
+        filename: './build/bundle.js'
     },
     module: {
         loaders: [
