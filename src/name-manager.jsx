@@ -18,4 +18,4 @@ class NameManager extends React.Component {
     }
 }
 
-ReactDom.render(<NameManager/>, document.querySelector('#demo'))
+ReactDom.render(<NameManager/>, document.querySelector('#application'))
