@@ -1,3 +1,4 @@
+var When = require('when');
 var FalcorServer = require('falcor-express'),
     bodyParser = require('body-parser'),
     express = require('express'),
@@ -29,7 +30,10 @@ var FalcorServer = require('falcor-express'),
         {
             route: 'names.length',
             get: () => {
-                return {path: ['names', 'length'], value: data.names.length}
+                // return {path: ['names', 'length'], value: data.names.length}
+                return When.promise((resolve, reject, notify) => {
+                    setTimeout(() => resolve({path: ['names', 'length'], value: data.names.length}) , 5000);
+                })
             }
         },
         {
