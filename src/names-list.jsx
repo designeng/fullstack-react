@@ -1,5 +1,5 @@
 var React = require('react'),
-    model = require('./model.js');
+    model = require('./models/usual/model.js');
 
 class NamesList extends React.Component {
     constructor() {
