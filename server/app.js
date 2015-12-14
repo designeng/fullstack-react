@@ -1,11 +1,12 @@
 var FalcorServer = require('falcor-express'),
     bodyParser = require('body-parser'),
-    express = require('express'),
     NamesRouter = require('./routers/usual'),
-    EventsRouterFactory = require('./routers/socket'),
-    app = express(),
-    server = require('http').createServer(app),
-    io = require('socket.io')(server);
+    EventsRouterFactory = require('./routers/socket');
+
+var express = require("express");
+var app = express();
+var server = require("http").Server(app);
+var io = require("socket.io")(server);
 
 var routes = require('./routes/index');
 
@@ -18,6 +19,7 @@ app.use('/model.json', FalcorServer.dataSourceRoute(() => new NamesRouter()));
 app.use('/events.json', FalcorServer.dataSourceRoute(() => new EventsRouter()));
 
 app.use('/api', routes);
+
 app.use(express.static('.'));
 
 /* 404 */
@@ -27,12 +29,11 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-io.on('connection', function(client) {  
-    console.log('Client connected...');
+var handleClient = function (socket) {
+    socket.emit("tweet", {user: "nodesource", text: "Hello, world!"});
+};
 
-    client.on('join', function(data) {
-        console.log(data);
-    });
-});
+io.on("connection", handleClient);
 
-module.exports = app;
+// exports server, not app (server wrapped app)
+module.exports = server;
