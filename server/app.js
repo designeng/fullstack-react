@@ -34,6 +34,13 @@ var handleClient = function (socket) {
     setTimeout(function () {
         socket.emit("tweet", tweet);
     }, 1000);
+    socket.on("join", function(message) {
+        console.log("message from", message.user);
+        console.log("contents:", message.text);
+    });
+    socket.on("error", function(error) {
+        console.log("SOCKET ERROR::::", error);
+    });
 };
 
 io.on("connection", handleClient);

@@ -6,7 +6,12 @@ var React = require('react'),
 import SocketIoClient from "socket.io-client";
 
 var socket = SocketIoClient.connect('http://localhost:9090');
-setTimeout(() => {socket.emit('join')}, 1000);
+
+socket.on("connect", function () {
+    console.log("CLIENT SOCKET CONNECT");
+})
+
+setTimeout(() => {socket.emit('join', {user: "client", text: "listening..."})}, 2000);
 
 socket.on("tweet", function(tweet) {
     console.log("tweet from", tweet.user);
