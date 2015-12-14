@@ -8,6 +8,11 @@ import SocketIoClient from "socket.io-client";
 var socket = SocketIoClient.connect('http://localhost:9090');
 setTimeout(() => {socket.emit('join')}, 1000);
 
+socket.on("tweet", function(tweet) {
+    console.log("tweet from", tweet.user);
+    console.log("contents:", tweet.text);
+});
+
 class NameManager extends React.Component {
     handleNameAdded() {
         this.refs.namesList.update()

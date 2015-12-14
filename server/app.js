@@ -30,7 +30,10 @@ app.use(function(req, res, next) {
 });
 
 var handleClient = function (socket) {
-    socket.emit("tweet", {user: "nodesource", text: "Hello, world!"});
+    var tweet = {user: "nodesource", text: "Hello, world!"};
+    setTimeout(function () {
+        socket.emit("tweet", tweet);
+    }, 1000);
 };
 
 io.on("connection", handleClient);
